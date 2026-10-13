@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Портфолио продуктового дизайнера Кристины Вериго"
+    />
+    <title>Кристина Вериго — продуктовый дизайнер</title>
+    <link rel="icon" type="image/png" href="./assets/images/main-page/avatar.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="./assets/images/main-page/mascot-idle-polished.png" />
+    <link rel="preload" as="image" href="./assets/images/main-page/mascot-jump-polished.png" />
+    <link rel="preload" as="image" href="./assets/images/main-page/mascot-run-polished.png" />
+    <link rel="preload" as="image" href="./assets/images/main-page/mascot-wave-polished.png?v=directional-walk-1" />
+    <link rel="preload" as="image" href="./public/assets/fortune-cookie-states.png" />
+    <link rel="stylesheet" href="./styles-refine.css?v=bubble-cleanup-1" />
+    <link rel="stylesheet" href="./styles-v2.css?v=back-to-top-contrast-1" />
+    <link rel="stylesheet" href="./ui-bubble.css?v=tail-join-1" />
+    <script src="./script-refine.js?v=interests-wave-1" defer></script>
+    <script src="./script-v2.js?v=back-to-top-contrast-1" defer></script>
+    <script src="./mascot-motion-v2.js?v=greeting-wave-1" defer></script>
+    <script src="./fortune-cookie.js?v=motion-polish-1" defer></script>
+    <script src="./hero-doodles.js?v=greeting-wave-1" defer></script>
+  </head>
+  <body class="home-v2">
+    <div class="page-shell">
+      <header class="v2-header">
+        <nav class="v2-nav" aria-label="Основная навигация">
+          <span class="v2-nav__pill" aria-hidden="true"></span>
+          <a class="v2-nav__projects" href="#projects"><span class="v2-nav__label">Проекты</span></a>
+          <a class="v2-nav__about" href="#about"><span class="v2-nav__label">Обо&nbsp;мне</span></a>
+          <a class="v2-nav__cv" href="./assets/cv/kristina-verigo-cv2.pdf" target="_blank" rel="noopener noreferrer"><span class="v2-nav__label">CV</span></a>
+        </nav>
+        <a class="v2-header__telegram" href="https://t.me/butnott" target="_blank" rel="noreferrer" aria-label="Telegram Кристины Вериго">
+          <span class="v2-header__telegram-label" aria-hidden="true">Telegram</span>
+          <svg viewBox="10 15 24 20" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.4449 23.8001C18.3939 21.2088 22.36 19.5004 24.343 18.6749C30.0115 16.3179 31.1879 15.9085 31.9562 15.8947C32.1252 15.8919 32.5014 15.9337 32.7469 16.1322C32.9509 16.2995 33.0083 16.5259 33.037 16.6848C33.0625 16.8436 33.0976 17.2055 33.0689 17.4879C32.7628 20.7143 31.4334 28.5437 30.7575 32.1575C30.4738 33.6865 29.9095 34.1991 29.3643 34.2492C28.1783 34.3582 27.2793 33.4662 26.1315 32.7141C24.3366 31.5367 23.3228 30.8041 21.5789 29.6554C19.564 28.3279 20.8711 27.5981 22.0188 26.4058C22.3185 26.0936 27.5407 21.3449 27.6395 20.9142C27.6523 20.8603 27.665 20.6595 27.5439 20.5536C27.4259 20.4475 27.2506 20.4838 27.123 20.5125C26.9413 20.5533 24.0752 22.4496 18.5151 26.2011C17.7021 26.7603 16.9657 27.0329 16.3025 27.0185C15.5756 27.0029 14.1729 26.6066 13.1303 26.268C11.8551 25.8526 10.8381 25.633 10.9273 24.9274C10.972 24.5602 11.4789 24.1843 12.4449 23.8001Z" fill="currentColor"/>
+          </svg>
+        </a>
+      </header>
+      <main id="top">
+        <div class="v2-hero-flow">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="v2-dot-field" aria-hidden="true">
+            <canvas class="v2-dot-field__canvas"></canvas>
+          </div>
+          <div class="hero__characters">
+            <button
+              class="hero__mascot"
+              type="button"
+              aria-label="Пощекотать персонажа"
+              data-mascot
+            >
+              <span class="hero__mascot-presence" data-mascot-presence aria-hidden="true">
+                <span class="hero__mascot-motion" data-mascot-motion><span class="hero__mascot-stage">
+                  <span class="hero__mascot-sheet" data-mascot-sheet aria-hidden="true"></span>
+                  <img
+                    class="hero__mascot-sprite hero__mascot-sprite--idle is-active"
+                    src="./assets/images/main-page/mascot-idle-polished.png"
+                    alt=""
+                    data-mascot-state="idle"
+                  />
+                  <img
+                    class="hero__mascot-sprite hero__mascot-sprite--jump"
+                    src="./assets/images/main-page/mascot-jump-polished.png"
+                    alt=""
+                    data-mascot-state="jump"
+                  />
+                  <img
+                    class="hero__mascot-sprite hero__mascot-sprite--run"
+                    src="./assets/images/main-page/mascot-run-polished.png"
+                    alt=""
+                    data-mascot-state="run"
+                  />
+                </span></span>
+              </span>
+            </button>
+
+            <div class="bubble-anchor bubble-anchor--mascot">
+              <span class="ui-bubble ui-bubble--medium ui-bubble--tail-right" data-mascot-bubble><span class="ui-bubble__text">хаха, щекотно!</span></span>
+            </div>
+            <div class="bubble-anchor bubble-anchor--greeting" data-greeting-anchor>
+              <span class="ui-bubble ui-bubble--small ui-bubble--tail-right"><span class="ui-bubble__text">Привет!</span></span>
+            </div>
+            <div class="bubble-anchor bubble-anchor--cookie">
+              <div class="ui-bubble ui-bubble--large ui-bubble--tail-right" role="status" aria-live="polite" aria-hidden="true" hidden data-fortune-strip><span class="ui-bubble__text" data-fortune-text></span></div>
+            </div>
+
+            <div
+              class="hero__fortune"
+              data-fortune-cookie
+              data-cookie-state="closed"
+              data-cookie-frame="closed"
+            >
+              <button
+                class="hero__fortune-button"
+                type="button"
+                aria-label="Получить дизайнерское предсказание"
+                aria-expanded="false"
+                data-fortune-button
+              >
+                <span class="hero__fortune-sprite" aria-hidden="true"></span>
+              </button>
+              <svg
+                class="hero__cookie-rays"
+                viewBox="0 0 25 35"
+                aria-hidden="true"
+                data-doodle-asset="./assets/images/main-page/cookie-rays.svg"
+              ></svg>
+            </div>
+
+            <span class="hero__doodle-layer" aria-hidden="true" data-doodle-layer>
+              <svg
+                class="hero__doodle-heart"
+                viewBox="0 0 30 33"
+                data-doodle-heart
+                data-doodle-asset="./assets/images/main-page/heart-doodle.svg"
+              ></svg>
+              <img
+                class="hero__doodle-pencil"
+                src="./assets/images/main-page/pencil.png"
+                width="48"
+                height="48"
+                alt=""
+                data-doodle-pencil
+              />
+            </span>
+          </div>
+
+          <div class="hero__copy">
+            <h1 class="hero__name" id="hero-title">Кристина Вериго</h1>
+            <p class="hero__meta">
+              <span>Product designer</span>
+              <svg
+                class="hero-meta-star"
+                viewBox="0 0 81.8421 81.8421"
+                aria-hidden="true"
+                focusable="false"
+                data-node-id="537:3734"
+              >
+                <path
+                  d="M39.926 0.900776C40.0457 -0.300269 41.7963 -0.300254 41.9161 0.90079L44.7541 29.364C44.8333 30.1582 45.7651 30.5442 46.3827 30.0386L68.516 11.9188C69.45 11.1542 70.6878 12.3921 69.9232 13.3261L51.8035 35.4594C51.2979 36.0769 51.6839 37.0088 52.478 37.0879L80.9413 39.926C82.1423 40.0457 82.1423 41.7963 80.9413 41.9161L52.478 44.7541C51.6839 44.8333 51.2979 45.7651 51.8035 46.3827L69.9232 68.516C70.6878 69.45 69.4499 70.6878 68.516 69.9232L46.3827 51.8035C45.7651 51.2979 44.8333 51.6839 44.7541 52.478L41.9161 80.9413C41.7963 82.1423 40.0457 82.1423 39.926 80.9413L37.0879 52.478C37.0088 51.6839 36.0769 51.2979 35.4594 51.8035L13.3261 69.9232C12.3921 70.6878 11.1542 69.4499 11.9188 68.516L30.0386 46.3827C30.5442 45.7651 30.1582 44.8333 29.364 44.7541L0.900776 41.9161C-0.300269 41.7963 -0.300254 40.0457 0.90079 39.926L29.364 37.0879C30.1582 37.0088 30.5442 36.0769 30.0386 35.4594L11.9188 13.3261C11.1542 12.3921 12.3921 11.1542 13.3261 11.9188L35.4594 30.0386C36.0769 30.5442 37.0088 30.1582 37.0879 29.364L39.926 0.900776Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span>3 года опыта</span>
+            </p>
+
+            <p class="hero__description">
+              Разбираюсь в&nbsp;сложных продуктовых задачах, упрощаю сценарии и&nbsp;довожу решения
+              от&nbsp;идеи и&nbsp;прототипа до&nbsp;релиза.
+            </p>
+
+            <address class="contacts contacts--hero">
+              <a
+                class="contact-item"
+                href="https://t.me/butnott"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="contact-item__icon-shell contact-item__icon-shell--telegram">
+                  <img
+                    class="contact-item__icon"
+                    src="./assets/images/main-page/icon-telegram.svg"
+                    alt=""
+                  />
+                </span>
+                <span class="contact-item__text">
+                  <strong>@butnott</strong>
+                  <span>Telegram</span>
+                </span>
+              </a>
+
+              <a class="contact-item" href="mailto:verigo.kristina@yandex.ru">
+                <span class="contact-item__icon-shell contact-item__icon-shell--email">
+                  <img
+                    class="contact-item__icon"
+                    src="./assets/images/main-page/icon-email.svg"
+                    alt=""
+                  />
+                </span>
+                <span class="contact-item__text">
+                  <strong>verigo.kristina@yandex.ru</strong>
+                  <span>Email</span>
+                </span>
+              </a>
+
+              <a
+                class="contact-item"
+                href="assets/cv/kristina-verigo-cv2.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="contact-item__icon-shell contact-item__icon-shell--resume">
+                  <img
+                    class="contact-item__icon"
+                    src="./assets/images/main-page/icon-resume.svg"
+                    alt=""
+                  />
+                </span>
+                <span class="contact-item__text">
+                  <strong>CV</strong>
+                  <span>PDF</span>
+                </span>
+              </a>
+            </address>
+          </div>
+        </section>
+        </div>
+
+        <section class="v2-projects" id="projects" aria-label="Проекты">
+          <article class="v2-project v2-project--my-food-app">
+            <a class="v2-project__link" href="./projects/my-food-app/" aria-label="Открыть кейс My Food App">
+              <span class="v2-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="v2-project__copy">
+                <span class="v2-project__title">My Food App</span>
+                <span class="v2-project__description">Оптимизация чекаута, перевод управления заморозкой в&nbsp;ЛК и&nbsp;интеграция элементов единой дизайн-системы.</span>
+              </span>
+              <span class="v2-project__visual">
+                <img src="./assets/images/main-page/home-v2/my-food-app-mockup.png" alt="" width="540" height="1103" loading="lazy" decoding="async" />
+              </span>
+            </a>
+          </article>
+          <article class="v2-project v2-project--level-kitchen-web">
+            <a class="v2-project__link" href="./projects/level-kitchen-web/" aria-label="Открыть кейс Level Kitchen Web">
+              <span class="v2-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="v2-project__copy">
+                <span class="v2-project__title">Level Kitchen Web</span>
+                <span class="v2-project__description">Конструктор рационов на&nbsp;главной странице, интеграция оплаты частями (BNPL) и&nbsp;синхронизация сценариев с&nbsp;мобайлом.</span>
+              </span>
+              <span class="v2-project__visual">
+                <img src="./assets/images/main-page/home-v2/level-kitchen-web-mockup.png" alt="" width="1847" height="1048" loading="lazy" decoding="async" />
+              </span>
+            </a>
+          </article>
+          <article class="v2-project v2-project--my-food-promo">
+            <a class="v2-project__link" href="./projects/my-food-promo/" aria-label="Открыть кейс My Food Promo">
+              <span class="v2-arrow v2-arrow--dark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="v2-project__copy">
+                <span class="v2-project__title">My Food Promo</span>
+                <span class="v2-project__description">Проверка маркетинговой гипотезы: интерактивный промо-лендинг с&nbsp;AI-версткой без&nbsp;отвлечения основной команды разработки.</span>
+              </span>
+              <span class="v2-project__visual">
+                <img src="./assets/images/main-page/home-v2/my-food-promo-mockup.png" alt="" width="1852" height="1048" loading="lazy" decoding="async" />
+              </span>
+            </a>
+          </article>
+          <article class="v2-project v2-project--level-kitchen-app">
+            <a class="v2-project__link" href="./projects/level-kitchen-app/" aria-label="Открыть кейс Level Kitchen App">
+              <span class="v2-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="v2-project__copy">
+                <span class="v2-project__title">Level Kitchen App</span>
+                <span class="v2-project__description">Адаптация интерфейса под&nbsp;темную тему, кастомизация состава блюд и&nbsp;понятный перенос дат доставки.</span>
+              </span>
+              <span class="v2-project__visual">
+                <img src="./assets/images/main-page/home-v2/level-kitchen-app-mockup.png" alt="" width="540" height="1103" loading="lazy" decoding="async" />
+              </span>
+            </a>
+          </article>
+        </section>
+
+        <section class="v2-final" aria-label="Обо мне и результаты">
+          <article class="v2-final__card v2-about" id="about" aria-labelledby="v2-about-title">
+            <div class="v2-about__text">
+              <h2 id="v2-about-title">Обо&nbsp;мне</h2>
+              <p class="v2-about__intro">Разбираюсь не только в&nbsp;интерфейсе: смотрю на&nbsp;сценарий, метрики и&nbsp;ограничения разработки. Люблю задачи, где нужно упростить сложное и&nbsp;довести решение до&nbsp;продукта.</p>
+              <div class="v2-about__points">
+                <div class="v2-about__point"><h3>E-commerce</h3><p>Checkout · конструкторы рационов · личный кабинет</p></div>
+                <div class="v2-about__point"><h3>Редизайн и&nbsp;legacy</h3><p>Перепроектирование сложных сценариев и&nbsp;переход на&nbsp;новую архитектуру</p></div>
+                <div class="v2-about__point"><h3>Design systems</h3><p>My Food · Level Kitchen · Figma Variables</p></div>
+                <div class="v2-about__point"><h3>Прототипирование и&nbsp;delivery</h3><p>Прототипы · handoff · HTML/CSS · AI-инструменты</p></div>
+              </div>
+            </div>
+            <div class="v2-about__photos" aria-label="Фотографии Кристины">
+              <img class="v2-about__photo v2-about__photo--main" src="./assets/images/main-page/me4.png" alt="Кристина у декоративной стены" width="564" height="529" loading="lazy" decoding="async" />
+              <img class="v2-about__photo v2-about__photo--hike" src="./assets/images/main-page/me2.png" alt="Кристина в горах" width="564" height="529" loading="lazy" decoding="async" />
+              <img class="v2-about__photo v2-about__photo--landscape" src="./assets/images/main-page/avatar-landscape.png" alt="Кристина на горной прогулке" width="2658" height="1280" loading="lazy" decoding="async" />
+            </div>
+          </article>
+
+          <article class="v2-final__card v2-results" aria-labelledby="v2-results-title">
+            <div class="v2-results__content">
+              <h2 id="v2-results-title">Результаты</h2>
+              <p class="v2-results__intro">Решения, которые дошли до&nbsp;продукта и&nbsp;повлияли на&nbsp;ключевые метрики.</p>
+              <div class="v2-results__metrics">
+                <div class="v2-results__metric"><strong>+72%</strong><span>CR в&nbsp;покупку</span><small aria-label="12% до 20,6%">12%<svg class="v2-results__flow-arrow v2-results__flow-arrow--small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>20,6%</small><small>My Food</small></div>
+                <div class="v2-results__metric"><strong>+13%</strong><span>к&nbsp;среднему чеку</span><small>после запуска BNPL</small><small>Level Kitchen</small></div>
+                <div class="v2-results__metric"><strong aria-label="2 к 1">2<svg class="v2-results__flow-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>1</strong><span>дизайн-система</span><small>для&nbsp;My Food и&nbsp;Level Kitchen</small></div>
+                <div class="v2-results__metric"><strong>2 клика</strong><span>управление доставкой</span><small>My Food</small></div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+      <button class="v2-back-to-top" type="button" aria-label="Наверх" aria-hidden="true" tabindex="-1">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M5 19 19 5M7 5h12v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <footer class="v2-footer">Portfolio · 2026</footer>
+    </div>
+  </body>
+</html>

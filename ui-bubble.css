@@ -1,0 +1,160 @@
+/* Shared Hero speech bubble. Shape, type, tail and motion belong only here. */
+.ui-bubble {
+  --bubble-max-width: 240px;
+  --bubble-fill: #fff;
+  --bubble-ink: #29242d;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: min(var(--bubble-max-width), calc(100vw - 32px));
+  height: auto;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  border: 2px solid var(--bubble-ink);
+  border-radius: 19px 19px 17px 21px / 18px 15px 15px 19px;
+  background: var(--bubble-fill);
+  color: var(--bubble-ink);
+  font: 500 14px/1.4 "Manrope", "Helvetica Neue", Arial, sans-serif;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px) scale(.94);
+  transform-origin: center bottom;
+  transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 200ms;
+  pointer-events: none;
+}
+.ui-bubble--small { --bubble-max-width: 180px; }
+.ui-bubble--medium { --bubble-max-width: 240px; }
+.ui-bubble--large { --bubble-max-width: 300px; }
+.ui-bubble__text { white-space: normal; overflow-wrap: inherit; }
+.ui-bubble::before,
+.ui-bubble::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 11px;
+  height: 11px;
+  background: var(--bubble-fill);
+  pointer-events: none;
+}
+.ui-bubble::before { border: 2px solid var(--bubble-ink); transform: rotate(45deg); }
+.ui-bubble::after { width: 12px; height: 12px; }
+.ui-bubble--tail-bottom-right::before,
+.ui-bubble--tail-bottom-right::after { right: 25px; bottom: -6px; }
+.ui-bubble--tail-bottom-left::before,
+.ui-bubble--tail-bottom-left::after { left: 25px; bottom: -6px; }
+.ui-bubble--tail-right::before,
+.ui-bubble--tail-right::after { right: -6px; top: 24px; }
+.ui-bubble--tail-left::before,
+.ui-bubble--tail-left::after { left: -6px; top: 24px; }
+.ui-bubble--tail-bottom-right::after,
+.ui-bubble--tail-bottom-left::after { bottom: 0; }
+.ui-bubble--tail-right::after { right: 0; }
+.ui-bubble--tail-left::after { left: 0; }
+/* Keep the greeting tail outline continuous at its join with the frame. */
+.bubble-anchor--greeting .ui-bubble--tail-right::before {
+  z-index: 1;
+  right: -10px;
+  top: calc(50% - 7px);
+  width: 12px;
+  height: 14px;
+  border: 0;
+  background: var(--bubble-ink);
+  transform: none;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.bubble-anchor--greeting .ui-bubble--tail-right::after {
+  z-index: 2;
+  right: -6px;
+  top: calc(50% - 5px);
+  width: 8px;
+  height: 10px;
+  background: var(--bubble-fill);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.bubble-anchor {
+  position: absolute;
+  z-index: 6;
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  pointer-events: none;
+}
+.bubble-anchor--mascot { top: 110px; right: calc(100% - 54px); justify-content: flex-end; }
+.bubble-anchor--greeting { top: 82px; right: calc(100% - 55px); justify-content: flex-end; }
+.bubble-anchor--cookie { right: calc(100% - 8px); bottom: 20px; justify-content: flex-end; }
+.bubble-anchor--cookie .ui-bubble { transform-origin: right bottom; }
+.bubble-anchor.is-visible .ui-bubble,
+.hero__characters:has(.hero__mascot:is(.is-tickle, .is-annoyed)) .bubble-anchor--mascot .ui-bubble,
+.hero__characters:has(.hero__fortune.is-fortune-visible, .hero__fortune[data-cookie-state="open"]) .bubble-anchor--cookie .ui-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+.hero__characters:has(.hero__fortune.is-fortune-visible, .hero__fortune[data-cookie-state="open"]) .bubble-anchor--mascot .ui-bubble { opacity: 0; visibility: hidden; }
+.hero__characters:has(.hero__fortune.is-fortune-visible, .hero__fortune[data-cookie-state="open"]) .bubble-anchor--cookie [hidden] { display: inline-block; }
+.bubble-anchor--cookie .ui-bubble.is-swapping .ui-bubble__text { opacity: 0; }
+.bubble-anchor--cookie .ui-bubble__text { transition: opacity 110ms ease; }
+
+/* V2 art is scaled; anchors are siblings so the text stays 14px. */
+.home-v2 .bubble-anchor--mascot { top: 125px; right: calc(100% - 75px); }
+.home-v2 .bubble-anchor--greeting { top: 72px; right: calc(100% - 85px); }
+.home-v2 .bubble-anchor--cookie { right: calc(100% - 20px); bottom: 28px; }
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .bubble-anchor--cookie { right: calc(100% - 24px); }
+  .home-v2 .bubble-anchor--mascot { top: 105px; right: calc(100% - 65px); }
+  .home-v2 .bubble-anchor--cookie { right: calc(100% - 18px); bottom: 20px; }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .bubble-anchor--cookie .ui-bubble { --bubble-max-width: 200px; }
+}
+@media (max-width: 767px) {
+  .ui-bubble { font-size: 13px; }
+  .hero__characters,
+  .home-v2 .hero__characters { height: 250px; }
+  .bubble-anchor--mascot,
+  .bubble-anchor--greeting,
+  .bubble-anchor--cookie,
+  .home-v2 .bubble-anchor--mascot,
+  .home-v2 .bubble-anchor--greeting,
+  .home-v2 .bubble-anchor--cookie {
+    left: 50%; right: auto; top: 0; bottom: auto;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+  .bubble-anchor--mascot,
+  .home-v2 .bubble-anchor--mascot { top: 12px; }
+  .bubble-anchor--greeting,
+  .home-v2 .bubble-anchor--greeting {
+    top: 80px;
+    left: calc(50% - 44px);
+    right: auto;
+    transform: translateX(-100%);
+  }
+  .bubble-anchor--cookie,
+  .home-v2 .bubble-anchor--cookie { top: 4px; }
+  .bubble-anchor--mascot .ui-bubble,
+  .bubble-anchor--cookie .ui-bubble { transform-origin: center bottom; }
+  .bubble-anchor--mascot .ui-bubble::before,
+  .bubble-anchor--mascot .ui-bubble::after { right: 25px; left: auto; top: auto; bottom: -6px; }
+  .bubble-anchor--cookie .ui-bubble::before,
+  .bubble-anchor--cookie .ui-bubble::after { left: 25px; right: auto; top: auto; bottom: -6px; }
+  .bubble-anchor--mascot .ui-bubble::after,
+  .bubble-anchor--cookie .ui-bubble::after { bottom: 0; }
+}
+@media (max-width: 390px) {
+  .hero__characters,
+  .home-v2 .hero__characters { height: 265px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-bubble { transform: none !important; transition: opacity 160ms ease-out, visibility 0s linear 160ms !important; }
+  .bubble-anchor--cookie .ui-bubble__text { transition: none; }
+}
